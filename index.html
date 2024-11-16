@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Practice</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="language-buttons">
+        <button id="english-btn" class="lang-btn active">EN</button>
+        <button id="chinese-btn" class="lang-btn">中</button>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Typing Practice</h1>
+            <div id="timer">60</div>
+        </div>
+
+        <div class="text-wrapper">
+            <div id="text-display" class="text-display"></div>
+            <div class="cursor"></div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-label">WPM</div>
+                <div class="stat-value" id="wpm">0</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Accuracy</div>
+                <div class="stat-value" id="accuracy">0%</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Errors</div>
+                <div class="stat-value" id="errors">0</div>
+            </div>
+        </div>
+
+        <div class="control-panel">
+            <div class="buttons">
+                <button id="start-btn">Start</button>
+                <button id="reset-btn" disabled>Reset</button>
+            </div>
+            <div id="ime-container">
+                <input type="text" id="ime-input" class="ime-input" autocomplete="off">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

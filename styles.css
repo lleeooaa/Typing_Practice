@@ -1,0 +1,264 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1a1a1a;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-left: 100px; /* Make space for the language buttons */
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #2d2d2d;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #4CAF50;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+#timer {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ff6b6b;
+    background: #363636;
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Text display area */
+.text-wrapper { 
+    position: relative;
+    background: #363636;
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    min-height: 150px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.text-display {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    letter-spacing: 1px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    position: relative;
+}
+
+/* Language select button */
+.language-buttons {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background: #2d2d2d;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+}
+
+.lang-btn {
+    width: 40px;
+    height: 40px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lang-btn.active {
+    background: #4CAF50;
+    color: white;
+}
+
+.lang-btn:hover {
+    transform: translateY(-2px);
+}
+
+.control-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Character styles */
+.char {
+    display: inline-block;
+    color: #808080;
+    transition: all 0.2s ease;
+    white-space: pre;
+}
+
+.char.current {
+    background-color: #ffffffba;
+}
+
+.char.correct {
+    color: #ffffff;
+}
+
+.char.incorrect {
+    color: #ff6b6b;
+}
+
+.char.corrected {
+    color: #ffd93d;
+}
+
+.char.space-char {
+    position: relative;
+    display: inline-block;
+    width: 8px;
+    margin: 0 2px;
+}
+
+.char.space-char.correct {
+    background-color: transparent;
+}
+
+.char.space-char.incorrect {
+    background-color: #ff6b6b;
+}
+
+.char.space-char.corrected {
+    background-color: #ffd93d;
+}
+
+.char.space-char.current {
+    background-color: #ffffffba;
+}
+
+/* ime textbox styles */
+#ime-container { /* Invisible */
+    position: absolute; 
+    left: 0; 
+    top: 0; 
+    width: 0; 
+    height: 0; 
+    overflow: hidden; 
+}
+
+.ime-input {
+    position: absolute; 
+    opacity: 0;
+    width: 1px; 
+    height: 1px; 
+    border: none;
+    padding: 0;
+    margin: 0; 
+    pointer-events: none; 
+}
+
+.ime-input.active {
+    opacity: 0; /* Keep invisible even when active */
+    pointer-events: auto;
+}
+
+.word {
+    display: inline-block;
+    white-space: nowrap;
+    margin-right: 4px; /* Adds some space between words */
+}
+
+/* Stats display */
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+.stat-box {
+    flex: 1;
+    background: #363636;
+    padding: 1rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #808080;
+    margin-bottom: 0.5rem;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+/* Button display */
+.buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+button {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#start-btn {
+    background: #4CAF50;
+    color: white;
+}
+
+#start-btn:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+}
+
+#reset-btn {
+    background: #ff6b6b;
+    color: white;
+}
+
+#reset-btn:hover {
+    background: #ff5252;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    background: #808080;
+    cursor: not-allowed;
+    transform: none;
+}
