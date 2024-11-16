@@ -79,10 +79,10 @@ function updateStats() {
 
 function generateText() {
     if (currentLanguage === 'english') {
-        const words = getRandomWords(100);
+        const words = getRandomWords(70);
         const sentences = [];
         
-        for (let i = 0; i < 100; i += 10) {
+        for (let i = 0; i < 70; i += 10) {
             const sentenceWords = words.slice(i, i + 10);
             sentenceWords[0] = sentenceWords[0].charAt(0).toUpperCase() + sentenceWords[0].slice(1);
             sentences.push(sentenceWords.join(' '));
