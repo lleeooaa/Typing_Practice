@@ -49,7 +49,6 @@ function switchLanguage(language) {
     currentLanguage = language;
     englishBtn.classList.toggle('active', language === 'english');
     chineseBtn.classList.toggle('active', language === 'chinese');
-    textDisplay.classList.toggle('chinese', language === 'chinese');
     
     const isChineseLang = language === 'chinese';
     imeInput.classList.toggle('active', isChineseLang);
